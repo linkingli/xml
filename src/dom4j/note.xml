@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<info>
+1,xml文件的位置/src/dom4j.xml
+2,root元素的提取方式：getClassLoader().getResourceAsStream
+3，JUnit：@Test,jar的导入。
+4，节点属性操作，refer:http://blog.csdn.net/redarmy_chen/article/details/12969219
+5,字符串转换未xml: 
+	String text = "<csdn> <ja>servlet</ja></csdn>";  
+      Document document = DocumentHelper.parseText(text);
+6,xml转换未字符串：
+		  
+       Document   document = new SAXReader().read(new File("csdn.xml"));              
+       Element root=document.getRootElement();      
+       String docXmlText=document.asXML();//文档转换 
+       String rootXmlText=root.asXML();  //根标签转换
+      Element memberElm=root.element("servlet");  
+       String memberXmlText=memberElm.asXML(); 其他标签转换  
+</info>
